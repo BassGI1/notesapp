@@ -1,13 +1,88 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.topleft{
+  display: flex;
+  width: 19.1vw;
+  height: 5vw;
+  background-color: #7dbd96;
+  padding: 1.5vh;
+}
+
+.logoimage{
+  cursor: pointer;
+}
+
+.notesheader{
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: #B6D7B9;
+  border-bottom: solid 0.5vh #749b6f;
+  position: fixed;
+  margin-top: -7vh;
+}
+
+.moveright{
+  animation: moveright 2s forwards;
+}
+
+.moveleft{
+  animation: moveleft 2s forwards;
+}
+
+@keyframes moveright {
+  100% {
+    transform: translateX(14vw);
+  }
+}
+
+@keyframes moveleft {
+  0% {
+    transform: translateX(14vw);
+  }
+  100% {
+    transform: translateX(-0vw);
+  }
+}
+
+.sidebar{
+  height: calc(97vh - 8.5vw);
+  width: 20vw;
+  border-right: solid 0.5vw #4C6663;
+  border-top: solid 0.5vw #749b6f;
+  background-color: #9ABD97;
+  overflow-y: auto;
+  padding-top: 7vh;
+}
+
+.notediv{
+  display: flex;
+  line-height: 10vh;
+  font-size: 1.25rem;
+  width: 100%;
+  height: 15%;
+  align-items: center;
+  border-bottom: solid 0.5vh #749b6f;
+}
+
+.addnote{
+  width: 2vw;
+  height: 2vw;
+  border: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: -8vw;
+  margin-left: 5vw;
 }
