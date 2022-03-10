@@ -25,7 +25,7 @@ export default function App() {
 
     <div>
       <div className="topleft">
-        <img src={logo} onClick={move} className={`${moveRight ? "moveright" : ''} ${moveLeft ? "moveleft" : ''} logoimage`}/>
+        <img src={logo} alt="not found" onClick={move} className={`${moveRight ? "moveright" : ''} ${moveLeft ? "moveleft" : ''} logoimage`}/>
       </div>
       <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote}/>
       <Sidebar notes={notes} setNotes={setNotes}/>

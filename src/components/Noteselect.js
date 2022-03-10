@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Noteselect(props) {
+export default function Noteselect({title}) {
 
     return (
 
         <div className="noteselect">
-            black
+            {title.length > 11 ? title.substring(0, 11) + "..." : title}
         </div>
 
     )

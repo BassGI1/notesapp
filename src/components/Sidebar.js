@@ -4,7 +4,7 @@ import Note from "./Note.js";
 class note{
     constructor(id){
         this.title = id
-        this.activation = false
+        this.activation = true
     }
 }
 

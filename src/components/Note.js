@@ -5,7 +5,7 @@ export default function Note({title, activation, notes, setNotes}) {
     const activate = () => {
         let newthing = [...notes]
         for (let x = 0; x < newthing.length; ++x){
-            if (newthing[x].title == title){
+            if (newthing[x].title === title){
                 newthing[x].activation = !newthing[x].activation
             }
         }

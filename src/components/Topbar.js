@@ -7,7 +7,7 @@ export default function Topbar({notes, currentNote, setCurrentNote}) {
 
         <nav className="topbar">
 
-            {notes.filter(x => x.activation === true).map(x => <Noteselect />)}
+            {notes.filter(x => x.activation === true).map((x, index) => index < 7 ? <Noteselect title={x.title}/> : '')}
 
         </nav>
 
