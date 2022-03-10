@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import Note from "./Note.js";
 
 class note{
-    constructor(title){
-        this.title = title
-        this.activation = true
+    constructor(id){
+        this.title = id
+        this.activation = false
     }
 }
 
@@ -17,13 +17,13 @@ export default function Sidebar({notes, setNotes}) {
                 Notes
                 <div className="addnote" onClick={() => setNotes(x => {
                     let y = [...x]
-                    y.push(new note("New Note"))
+                    y.push(new note("New Note " + (y.length + 1)))
                     return y
                 })}>
                     +
                 </div>
             </div>
-            {notes.map(x => <Note title={x.title} activation={x.activation} key={x.title}/>)}
+            {notes.map((x, index) => <Note title={x.title} activation={x.activation} notes={notes} setNotes={setNotes} key={x.title + index}/>)}
         </div>
 
     )

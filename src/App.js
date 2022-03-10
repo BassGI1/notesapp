@@ -1,13 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Sidebar from "./components/Sidebar.js";
 import logo from "./images/logo.png";
-
-class note{
-  constructor(title){
-      this.title = title
-      this.activation = true
-  }
-}
+import Topbar from "./components/Topbar.js";
 
 export default function App() {
 
@@ -33,6 +27,7 @@ export default function App() {
       <div className="topleft">
         <img src={logo} onClick={move} className={`${moveRight ? "moveright" : ''} ${moveLeft ? "moveleft" : ''} logoimage`}/>
       </div>
+      <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote}/>
       <Sidebar notes={notes} setNotes={setNotes}/>
     </div>
 

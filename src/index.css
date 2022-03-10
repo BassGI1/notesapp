@@ -73,6 +73,7 @@ body{
   height: 15%;
   align-items: center;
   border-bottom: solid 0.5vh #749b6f;
+  cursor: pointer;
 }
 
 .addnote{
@@ -85,4 +86,28 @@ body{
   cursor: pointer;
   margin-right: -8vw;
   margin-left: 5vw;
+}
+
+.topbar{
+  position: absolute;
+  display: flex;
+  top: 0px;
+  left: calc(19.1vw + 3vh);
+  background-color: green;
+  height: calc(5vw + 3vh);
+  width: calc(100vw - calc(19.1vw + 3vh));
+  border-left: solid 0.5vw #4C6663;
+  border-bottom: solid 0.5vw #749b6f ;
+  background-color: #9ABD97;
+  padding: 2vh;
+  overflow-x: auto;
+}
+
+.noteselect{
+  width: auto;
+  height: 50%;
+  background-color: white;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 9.1vh;
 }
