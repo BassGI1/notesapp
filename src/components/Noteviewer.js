@@ -1,20 +1,28 @@
 import React, {useState} from "react";
 
-export default function Noteviewer({currentNote, setCurrentNote, notes, setNotes}){
+export default function Noteviewer({currentNote, setCurrentNote, notes, setNotes, currentText, setCurrentText}){
 
-    const [text, setText] = useState(() => {
-        console.log(notes)
-        console.log(currentNote)
-        for (let x = 0; x < notes.length; ++x){
-            if (currentNote === notes[x].title){
-                return notes[x].text
-            }
-        }
-        return ''
-    })
+    const [saveButton, setSaveButton] = useState('Unsaved')
+    const [animate, setAnimate] = useState(false)
+
+    const handleSave = () => {
+        localStorage.setItem('notes', JSON.stringify(notes))
+        setAnimate(true)
+        setSaveButton('Saved!')
+        setTimeout(() => {
+            setAnimate(false)
+            setSaveButton('Unsaved')
+        }, 2000)
+    }
 
     const handleChange = (event) => {
-        setText(event.target.value)
+        for (let x = 0; x < notes.length; ++x){
+            if (notes[x].title === currentNote){
+                notes[x].text = event.target.value
+                setCurrentText(notes[x].text)
+                break
+            }
+        }
     }
 
     const changeTitle = (event) => {
@@ -34,7 +42,8 @@ export default function Noteviewer({currentNote, setCurrentNote, notes, setNotes
 
         <div className="noteviewer">
             {currentNote !== '           ' && <input className="titlebox" type="text" value={currentNote} onChange={changeTitle} placeholder="Title your note"/>}
-            {currentNote !== '           ' && <textarea className="textbox" placeholder="Type your text here" onChange={handleChange}>{text}</textarea>}
+            {currentNote !== '           ' && <textarea className="textbox" placeholder="Type your text here" onChange={handleChange} value={currentText}></textarea>}
+            {currentNote !== '           ' && <div className={`savebutton ${animate ? "saveanimation" : ''}`} onClick={handleSave}>{saveButton}</div>}
         </div>
 
     )

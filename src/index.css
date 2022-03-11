@@ -192,3 +192,40 @@ body{
   font-size: 1.25rem;
   overflow-y: auto;
 }
+
+.savebutton{
+  position: absolute;
+  width: 4vw;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1vh;
+  border-radius: 10%;
+  right: 1vw;
+  background-color: #e27e56;
+  cursor: pointer;
+}
+
+@keyframes saveclick {
+  0% {
+    background-color: #e27e56;
+  }
+  30%{
+    width: 20vw;
+    height: 20vh;
+    background-color: #53cc81;
+  }
+  70%{
+    width: 20vw;
+    height: 20vh;
+    background-color: #53cc81;
+  }
+  100% {
+    background-color: #53cc81;
+  }
+}
+
+.saveanimation{
+  animation: saveclick 2s forwards;
+}

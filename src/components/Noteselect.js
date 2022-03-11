@@ -1,10 +1,18 @@
 import React from "react";
 
-export default function Noteselect({title, currentNote, setCurrentNote, notes, setNotes}) {
+export default function Noteselect({title, currentNote, setCurrentNote, notes, setNotes, setCurrentText}) {
 
     return (
 
-        <div onClick={() => setCurrentNote(title)} className={`${currentNote === title ? 'highernoteselect' : 'noteselect'}`}>
+        <div onClick={() => {
+            for (let x = 0; x < notes.length; ++x){
+                if (notes[x].title === title){
+                    setCurrentText(notes[x].text)
+                    break
+                }
+            }
+            setCurrentNote(title)
+        }} className={`${currentNote === title ? 'highernoteselect' : 'noteselect'}`}>
             <p style={{position: "absolute"}}>{title.length > 11 ? title.substring(0, 11) + "..." : title}</p>
             {currentNote === title && <img src="https://freesvg.org/img/trash.png" alt="delete" className="trash" onClick={() => {
                 for (let x = 0; x < notes.length; ++x){
