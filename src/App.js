@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Sidebar from "./components/Sidebar.js";
 import logo from "./images/logo.png";
 import Topbar from "./components/Topbar.js";
+import Noteviewer from "./components/Noteviewer.js";
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
       </div>
       <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote}/>
       <Sidebar notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote}/>
+      <Noteviewer currentNote={currentNote} setCurrentNote={setCurrentNote} notes={notes} setNotes={setNotes}/>
     </div>
 
   )

@@ -128,7 +128,7 @@ body{
   padding-left: 2vw;
   padding-right: 2vw;
   margin-top: 9.1vh;
-  cursor: default;
+  cursor: pointer;
 }
 
 .highernoteselect{
@@ -145,4 +145,25 @@ body{
   padding-right: 2vw;
   margin-top: 5vh;
   cursor: default;
+}
+
+.noteviewer{
+  position: fixed;
+  top: 18.7vh;
+  left: calc(19.1vw + 3vh);
+  width: 79.5vw;
+  height: 81.25vh;
+  background-color: #D0F1BF;
+  display: flex;
+  justify-content: center;
+}
+
+.titlebox{
+  width: 90%;
+  height: 10%;
+  margin-top: 2vw;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.75rem;
 }
