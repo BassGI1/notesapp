@@ -156,6 +156,7 @@ body{
   background-color: #D0F1BF;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .titlebox{
@@ -166,4 +167,28 @@ body{
   outline: none;
   border: none;
   font-size: 1.75rem;
+  cursor: text;
+}
+
+.trash{
+  width: 2vw;
+  height: 2vw;
+  position: relative;
+  top: 3vw;
+  cursor: pointer;
+}
+
+.textbox{
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  line-height: 3vh;
+  align-items: flex-start;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 1.25rem;
+  overflow-y: auto;
 }

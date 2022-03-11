@@ -8,8 +8,8 @@ export default function App() {
 
   const [moveRight, setMoveRight] = useState(false)
   const [moveLeft, setMoveLeft] = useState(false)
-  const [currentNote, setCurrentNote] = useState('')
-  const [notes, setNotes] = useState(() => [])
+  const [currentNote, setCurrentNote] = useState('         ')
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || [])
 
   const move = () => {
     if (!moveRight){
@@ -28,8 +28,8 @@ export default function App() {
       <div className="topleft">
         <img src={logo} alt="not found" onClick={move} className={`${moveRight ? "moveright" : ''} ${moveLeft ? "moveleft" : ''} logoimage`}/>
       </div>
-      <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote}/>
-      <Sidebar notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote}/>
+      <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote} setNotes={setNotes}/>
+      <Sidebar notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote} currentNote={currentNote}/>
       <Noteviewer currentNote={currentNote} setCurrentNote={setCurrentNote} notes={notes} setNotes={setNotes}/>
     </div>
 

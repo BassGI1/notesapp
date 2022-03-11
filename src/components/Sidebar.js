@@ -5,10 +5,11 @@ class note{
     constructor(id){
         this.title = id
         this.activation = true
+        this.text = ''
     }
 }
 
-export default function Sidebar({notes, setNotes, setCurrentNote}) {
+export default function Sidebar({notes, setNotes, setCurrentNote, currentNote}) {
 
     return (
 
@@ -23,7 +24,7 @@ export default function Sidebar({notes, setNotes, setCurrentNote}) {
                     +
                 </div>
             </div>
-            {notes.map((x, index) => <Note title={x.title} activation={x.activation} notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote} key={x.title + index}/>)}
+            {notes.map((x, index) => <Note title={x.title} activation={x.activation} notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote} key={x.title + JSON.stringify(index)}/>)}
         </div>
 
     )
