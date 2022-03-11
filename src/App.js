@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Sidebar from "./components/Sidebar.js";
 import logo from "./images/logo.png";
 import Topbar from "./components/Topbar.js";
