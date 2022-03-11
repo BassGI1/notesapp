@@ -8,7 +8,7 @@ class note{
     }
 }
 
-export default function Sidebar({notes, setNotes}) {
+export default function Sidebar({notes, setNotes, setCurrentNote}) {
 
     return (
 
@@ -23,7 +23,7 @@ export default function Sidebar({notes, setNotes}) {
                     +
                 </div>
             </div>
-            {notes.map((x, index) => <Note title={x.title} activation={x.activation} notes={notes} setNotes={setNotes} key={x.title + index}/>)}
+            {notes.map((x, index) => <Note title={x.title} activation={x.activation} notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote} key={x.title + index}/>)}
         </div>
 
     )

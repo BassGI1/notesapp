@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 
-export default function Note({title, activation, notes, setNotes}) {
+export default function Note({title, activation, notes, setNotes, setCurrentNote}) {
 
     const activate = () => {
         let newthing = [...notes]
         for (let x = 0; x < newthing.length; ++x){
+            if (!newthing[x].activation){
+                setCurrentNote(newthing[x].title)
+            }
             if (newthing[x].title === title){
                 newthing[x].activation = !newthing[x].activation
             }

@@ -28,7 +28,7 @@ export default function App() {
         <img src={logo} alt="not found" onClick={move} className={`${moveRight ? "moveright" : ''} ${moveLeft ? "moveleft" : ''} logoimage`}/>
       </div>
       <Topbar notes={notes} currentNote={currentNote} setCurrentNote={setCurrentNote}/>
-      <Sidebar notes={notes} setNotes={setNotes}/>
+      <Sidebar notes={notes} setNotes={setNotes} setCurrentNote={setCurrentNote}/>
     </div>
 
   )

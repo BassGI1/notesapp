@@ -76,6 +76,17 @@ body{
   cursor: pointer;
 }
 
+.notediv{
+  display: flex;
+  line-height: 10vh;
+  font-size: 1.25rem;
+  width: 100%;
+  height: 15%;
+  align-items: center;
+  border-bottom: solid 0.5vh #749b6f;
+  cursor: pointer;
+}
+
 .addnote{
   width: 2vw;
   height: 2vw;
@@ -117,5 +128,21 @@ body{
   padding-left: 2vw;
   padding-right: 2vw;
   margin-top: 9.1vh;
+  cursor: default;
+}
+
+.highernoteselect{
+  display: flex;
+  justify-content: center;
+  width: 8vw;
+  min-width: 6vw;
+  height: 70%;
+  background-color: #b6d7b9;
+  border-top: 1.5vh solid #749b6f;
+  border-left: 1px solid #749b6f;
+  border-right: 1px solid #749b6f;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-top: 5vh;
   cursor: default;
 }
