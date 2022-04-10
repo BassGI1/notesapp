@@ -191,6 +191,7 @@ body{
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 1.25rem;
   overflow-y: auto;
+  resize: none;
 }
 
 .savebutton{
