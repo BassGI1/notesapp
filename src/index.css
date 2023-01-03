@@ -230,3 +230,7 @@ body{
 .saveanimation{
   animation: saveclick 2s forwards;
 }
+
+*::-webkit-scrollbar{
+  display: none;
+}
